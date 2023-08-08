@@ -1,0 +1,19 @@
+指令链（CBC）用于储存连续的一串命令方块，使用链表结构
+header 储存该指令链主要信息
+format_version 模板版本
+minecraft_version 该指令链使用游戏版本
+minecraft_edition 该指令链使用游戏类型
+
+modules 储存指令链内容
+data 储存指令链一个节点的数据域
+name  命令方块名称
+command 这里输入指令内容
+type 命令方块类型 "p"为脉冲，"r"为重复，"c"为链
+tickdelay 命令方块执行延迟时间刻，默认应为0
+redstonemode 是否需要使用红石控制 布尔
+conditionalmode 是否有条件约束 布尔
+
+p 指针域
+head头指针
+
+comment 注释
