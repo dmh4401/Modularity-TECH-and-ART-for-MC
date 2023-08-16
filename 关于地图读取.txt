@@ -1,0 +1,31 @@
+根据观察判断，db文件夹内的为leveldb数据库文件，即储存世界全部内容的文件，前一级存档总文件夹的level.dat文件只是一些世界的基础设置和信息储存。
+XXX.ldb文件为数据库文件，所占空间最大，预计为储存世界所有方块实体等信息的地方
+
+https://www.cnblogs.com/hsly-bhj/p/16510487.html
+leveldb每个数据库对应一个目录并且每个数据库只能被一个进程打开。
+*.ldb：数据存储文件
+*.log：日志文件
+MANIFEST-*：元数据信息
+CURRENT：当前版本的元数据文件名
+LOCK：文件锁，避免被多个进程打开
+LOG：leveldb日志信息
+
+https://blog.csdn.net/chunyexiyu/article/details/127415334
+ldb的解析
+解析Footer–>解析index block->解析data block.
+解析Footer–>通过metablock指向解析可选filter block
+需手动制作读取程序，难度较高，不建议使用
+
+C知道
+目前已知可读取leveldb的python库
+pylru：pylru是一个Python的LRU（最近最少使用）缓存库，虽然不是官方的LevelDB库，但可以方便地在Python中使用LRU缓存来提高查询性能。
+安装方式：使用pip命令安装pylru库：pip install pylru
+plyvel：plyvel是一个Python的LevelDB库，它提供了对LevelDB数据库的完整访问功能，并支持高级特性如迭代器、批量写入等。
+安装方式：使用pip命令安装plyvel库：pip install plyvel
+请注意，plyvel依赖于LevelDB C++库，因此在安装之前需要先安装LevelDB C++库。具体安装方法可参考官方文档
+leveldb：leveldb是Google官方提供的Python库，用于直接操作LevelDB数据库。
+安装方式：使用pip命令安装leveldb库：pip install leveldb
+以上是几个常用的LevelDB库，根据自己的需求选择适合的库来操作LevelDB数据库。每个库都有自己的特点和用法，可以根据具体情况选择使用。
+已知问题：pycharm无法使用pip安装leveldb和plyvel
+
+可以参考amulte的读取与编辑方式
