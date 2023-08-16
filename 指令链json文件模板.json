@@ -15,7 +15,8 @@
 						"type":"p",
 						"tickdelay":0,
 						"redstonemode":false,
-						"conditionalmode":false
+						"conditionalmode":false,
+						"rotation":"s"
 					},
 					"p":0
 				}
