@@ -1,0 +1,27 @@
+{
+	
+	"header":{
+		"format_version": 1,
+		"minecraft_version":[1,0,0],
+		"minecraft_edition":"PE"		
+	},
+	
+	"modules":{
+		"content":[
+				{
+					"data":{
+						"name":"命令方块名称",
+						"command":"title @a title 这是一个指令链模板，这里输入指令内容",
+						"type":"p",
+						"tickdelay":0,
+						"redstonemode":false,
+						"conditionalmode":false,
+						"rotation":"s"
+					},
+					"p":0
+				}
+			],
+		"head":0
+	},
+	"comment":"这是一条关于该指令链（CBC）的注释"
+}
